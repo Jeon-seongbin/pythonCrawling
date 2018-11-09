@@ -13,4 +13,3 @@ class InsertMongoDb:
     def insertData(self, insertData):
         for data in insertData:
             InsertMongoDb.price.insert_one(data).inserted_id
-
