@@ -6,10 +6,10 @@ class InsertMongoDb:
     price = 0
 
     def __init__(self):
-        InsertMongoDb.client = MongoClient('localhost', 27017)
-        InsertMongoDb.db = InsertMongoDb.client["price"]
-        InsertMongoDb.price = InsertMongoDb.db.price
+        self.client = MongoClient('localhost', 27017)
+        self.db = self.client["price"]
+        self.price = self.db.price
 
     def insertData(self, insertData):
         for data in insertData:
-            InsertMongoDb.price.insert_one(data).inserted_id
+            self.price.insert_one(data).inserted_id
